@@ -1,7 +1,10 @@
 package webapp
 
+import java.io.{PrintWriter, StringWriter}
 import javax.ws.rs.core.MediaType
 import javax.ws.rs.{GET, Path, Produces, QueryParam}
+
+import scala.util.Try
 
 /**
   * Created by williame on 5/2/17.
@@ -12,6 +15,17 @@ class PingResource {
   @GET
   @Produces(Array(MediaType.TEXT_PLAIN))
   def ping(@QueryParam("url") url: String): String = {
-    scala.io.Source.fromURL(s"url").mkString
+    Try(scala.io.Source.fromURL(s"url").mkString)
+      .recover {
+        case e: Exception => asString(e)
+      }
+      .getOrElse("error")
+  }
+
+  private def asString(e: Exception) = {
+    val w = new StringWriter()
+    val p = new PrintWriter(w)
+    e.printStackTrace(p)
+    w.toString
   }
 }
