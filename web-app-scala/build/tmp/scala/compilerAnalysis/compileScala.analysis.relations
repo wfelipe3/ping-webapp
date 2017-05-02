@@ -1,0 +1,10 @@
+products:
+   src/main/scala/webapp/PingResource.scala -> build/classes/main/webapp/PingResource.class
+binary dependencies:
+   src/main/scala/webapp/PingResource.scala -> /Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/jre/lib/rt.jar
+   src/main/scala/webapp/PingResource.scala -> /Users/williame/.gradle/caches/modules-2/files-2.1/javax.ws.rs/jsr311-api/1.1.1/59033da2a1afd56af1ac576750a8d0b1830d59e6/jsr311-api-1.1.1.jar
+   src/main/scala/webapp/PingResource.scala -> /Users/williame/.gradle/caches/modules-2/files-2.1/org.scala-lang/scala-library/2.12.2/fe9780170207ebdabd4ac5bb335c82bd0aead480/scala-library-2.12.2.jar
+source dependencies:
+external dependencies:
+class names:
+   src/main/scala/webapp/PingResource.scala -> webapp.PingResource
